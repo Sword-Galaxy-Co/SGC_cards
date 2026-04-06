@@ -1,0 +1,14 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1771647226
+card test full.png::CompressedTexture2D::761022189821921240::1771657936::1775449032::1::::<><><>0<>0<>b1c40a0c7ba17b956f58a8a91288f8b2<>res://.godot/imported/card test full.png-35582184958c14ff330cc10de55edd4f.ctex::
+card test.png::CompressedTexture2D::6132218007309265615::1775281004::1775449032::1::::<><><>0<>0<>7a23cee2bac603fee82d372fb9fe3551<>res://.godot/imported/card test.png-9adc9eaa43b8147a9ad3f728e0963271.ctex::
+card_scene.tscn::PackedScene::7098474299903073995::1771702550::0::1::::<><><>0<>0<><>::uid://k3v6op5fbu6s::::res://card test full.png<>uid://d1o30mswcckk0::::res://card_type_make.gd
+card_type_make.gd::GDScript::9014818653959089157::1775449608::0::1::::<>Sprite2D<><>0<>0<><>::
+card_world_type.gd::GDScript::269103018422921402::1771823686::0::1::::<>Node<><>0<>0<><>::
+control.tscn::PackedScene::4376559852186839706::1775449648::0::1::::<><><>0<>0<><>::uid://c8es3m244djkl::::res://card_scene.tscn
+error.gd::GDScript::2500749934246348551::1771708672::0::1::::<>Node<><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1775448220::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::5704248885555146647::1771647220::1775449032::1::::<><><>0<>0<>34ac3ac79e0c4f6da4980eda4fbdad71<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://addon/::1775448298
+::res://addon/Sword Galaxy Empire/::1775448316
+plugin.cfg::TextFile::-1::1775448334::0::1::::<><><>0<>0<><>::
