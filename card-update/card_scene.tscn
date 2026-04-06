@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c8es3m244djkl"]
+
+[ext_resource type="Texture2D" uid="uid://k3v6op5fbu6s" path="res://card test full.png" id="1_1mof2"]
+[ext_resource type="Script" uid="uid://d1o30mswcckk0" path="res://card_type_make.gd" id="2_bcubn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eafyo"]
+size = Vector2(54, 90)
+
+[node name="card_scene" type="Sprite2D" unique_id=554749010]
+position = Vector2(4.7683716e-07, 1.4305115e-06)
+scale = Vector2(0.8888889, 0.8888889)
+texture = ExtResource("1_1mof2")
+hframes = 6
+vframes = 2
+script = ExtResource("2_bcubn")
+
+[node name="HitBoxBox" type="Area2D" parent="." unique_id=873144249]
+
+[node name="HitBoxShape" type="CollisionShape2D" parent="HitBoxBox" unique_id=254389942]
+position = Vector2(-5.364418e-07, -1.6093254e-06)
+shape = SubResource("RectangleShape2D_eafyo")
+
+[connection signal="mouse_entered" from="HitBoxBox" to="." method="_on_hit_box_box_mouse_entered"]
+[connection signal="mouse_exited" from="HitBoxBox" to="." method="_on_hit_box_box_mouse_exited"]

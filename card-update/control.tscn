@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://b3mbkil7lan8u"]
+
+[ext_resource type="PackedScene" uid="uid://c8es3m244djkl" path="res://card_scene.tscn" id="1_0fbet"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0fbet"]
+scenes/1/scene = ExtResource("1_0fbet")
+scenes/1/display_placeholder = true
+
+[sub_resource type="TileSet" id="TileSet_62e2m"]
+sources/0 = SubResource("TileSetScenesCollectionSource_0fbet")
+
+[sub_resource type="GDScript" id="GDScript_62e2m"]
+script/source = "extends Button
+@onready var progress_bar: ProgressBar = $\"../ProgressBar\"
+
+func _ready():
+	progress_bar.max_value = SGC_CWT.hp_max
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://control.tscn\")
+	progress_bar.value = SGC_CWT.hp
+	update()
+	pass # Replace with function body.
+	if progress_bar.value == progress_bar.min_value:
+		get_tree().quit()
+@onready var pm: PopupMenu = $\"../PM\"
+
+func update():
+	print(\"def\"+str(SGC_CWT.tank))
+	progress_bar.value = SGC_CWT.hp
+	pass
+"
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=779878675]
+tile_map_data = PackedByteArray("AAABAAYAAAAAAAAAAQAEAAYAAAAAAAAAAQAHAAYAAAAAAAAAAQAKAAYAAAAAAAAAAQANAAYAAAAAAAAAAQAQAAYAAAAAAAAAAQATAAYAAAAAAAAAAQAWAAYAAAAAAAAAAQABAAsAAAAAAAAAAQAEAAsAAAAAAAAAAQAHAAsAAAAAAAAAAQAKAAsAAAAAAAAAAQANAAsAAAAAAAAAAQAQAAsAAAAAAAAAAQAWAAsAAAAAAAAAAQABABAAAAAAAAAAAQATAAsAAAAAAAAAAQAHABAAAAAAAAAAAQANABAAAAAAAAAAAQAWABAAAAAAAAAAAQAEABAAAAAAAAAAAQAKABAAAAAAAAAAAQAQABAAAAAAAAAAAQATABAAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_62e2m")
+
+[node name="Button" type="Button" parent="." unique_id=1328943670]
+offset_right = 832.0
+offset_bottom = 64.0
+script = SubResource("GDScript_62e2m")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1246209683]
+visible = false
+modulate = Color(1, 0, 0, 1)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 832.0
+offset_right = 1152.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 20.0
+value = 20.0
+
+[node name="PM" type="PopupMenu" parent="." unique_id=1860000862]
+oversampling_override = 1.0
+title = "test"
+position = Vector2i(832, 28)
+size = Vector2i(320, 100)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
